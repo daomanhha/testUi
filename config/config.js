@@ -38,4 +38,5 @@ export default defineConfig({
   manifest: {
     basePath: '/',
   },
+  extraPostCSSPlugins: [require('tailwindcss')],
 });

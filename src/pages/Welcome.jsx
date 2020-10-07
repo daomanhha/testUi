@@ -1,48 +1,26 @@
 import React from 'react';
-import { PageContainer } from '@ant-design/pro-layout';
-import { Card, Alert, Typography } from 'antd';
+import { Row, Col } from 'antd';
+import LoginImage from '@/static/web_images/LoginImage.png';
+import LoginComponent from '@/components/LoginComponent';
 import styles from './Welcome.less';
 
-const CodePreview = ({ children }) => (
-  <pre className={styles.pre}>
-    <code>
-      <Typography.Text copyable>{children}</Typography.Text>
-    </code>
-  </pre>
-);
+const Welcome = () => {
+  return (
+    <>
+      <div className={styles.Login_Wrapper}>
+        <Row>
+          <Col xs={{ span: 0 }} lg={{ span: 14 }} xxl={{ span: 16 }}>
+            <div>
+              <img src={LoginImage} className={styles.customLoginImage} alt="" />
+            </div>
+          </Col>
+          <Col xs={{ span: 24 }} lg={{ span: 10 }} xxl={{ span: 8 }}>
+            <LoginComponent />
+          </Col>
+        </Row>
+      </div>
+    </>
+  );
+};
 
-export default () => (
-  <PageContainer>
-    <Card>
-      <Alert
-        message="更快更强的重型组件，已经发布。"
-        type="success"
-        showIcon
-        banner
-        style={{
-          margin: -12,
-          marginBottom: 24,
-        }}
-      />
-      <Typography.Text strong>
-        高级表格{' '}
-        <a href="https://protable.ant.design/" rel="noopener noreferrer" target="__blank">
-          欢迎使用
-        </a>
-      </Typography.Text>
-      <CodePreview>yarn add @ant-design/pro-table</CodePreview>
-      <Typography.Text
-        strong
-        style={{
-          marginBottom: 12,
-        }}
-      >
-        高级布局{' '}
-        <a href="https://prolayout.ant.design/" rel="noopener noreferrer" target="__blank">
-          欢迎使用
-        </a>
-      </Typography.Text>
-      <CodePreview>yarn add @ant-design/pro-layout</CodePreview>
-    </Card>
-  </PageContainer>
-);
+export default Welcome;
